@@ -1,19 +1,3 @@
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
 * {
   margin: 0;
   padding: 0;
@@ -22,14 +6,13 @@
 
 html {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  background: #333;
-  color: whitesmoke;
+  background-color: white;
+  color: #000;
 }
 
 body {
   min-height: 100vh;
   font-size: 1.5rem;
-  padding: 0 10% 10%;
 }
 
 input,
@@ -38,6 +21,42 @@ button,
 select {
   font: inherit;
   margin-bottom: 1em;
+}
+
+header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: blueviolet;
+  color: whitesmoke;
+  position: sticky;
+  top: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+nav a,
+nav a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus {
+  text-decoration: underline;
 }
 
 main {
@@ -50,14 +69,27 @@ section {
 }
 
 article {
-  margin: 0.5em 0.5em 0.5em 0;
-  border: 1px solid whitesmoke;
+  margin: 0.5em;
+  border: 1px solid #000;
   border-radius: 10px;
   padding: 1em;
 }
 
+a {
+  text-decoration: none;
+}
+
+.link {
+  text-decoration: underline;
+}
+
 h1 {
   font-size: 3.5rem;
+  color: white;
+}
+
+h2 {
+  margin-bottom: 1rem;
 }
 
 p {
@@ -72,24 +104,38 @@ form {
   flex-direction: column;
 }
 
+textarea {
+  height: 200px;
+}
+
 .postCredit {
   font-size: 1rem;
+}
+
+.postCredit a,
+.postCredit a:visited {
+  margin-right: 0.5rem;
+  color: black;
+}
+
+.postCredit a:hover,
+.postCredit a:focus {
+  color: hsla(0, 0%, 0%, 0.75);
+}
+
+.excerpt {
+  font-style: italic;
 }
 
 .reactionButton {
   margin: 0 0.25em 0 0;
   background: transparent;
   border: none;
-  color: whitesmoke;
+  color: #000;
   font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.15s;
 }
 
-.reactionButton span {
-  margin: 2.5px;
-}
-
-.reactionButton:hover {
-  transform: scale(1.1);
+.deleteButton {
+  background-color: palevioletred;
+  color: white;
 }

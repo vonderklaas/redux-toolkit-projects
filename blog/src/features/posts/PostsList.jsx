@@ -1,26 +1,12 @@
-import { useSelector, useDispatch } from 'react-redux';
-import {
-  selectAllPosts,
-  getPostsStatus,
-  getPostsError,
-  fetchPosts, // AsyncThunk Function
-} from './postsSlice';
-import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { selectAllPosts, getPostsStatus, getPostsError } from './postsSlice';
 
-import Post from './Posts';
+import Post from './Post';
 
 const PostsList = () => {
-  const dispatch = useDispatch();
-
   const posts = useSelector(selectAllPosts);
   const postsStatus = useSelector(getPostsStatus);
   const postsError = useSelector(getPostsError);
-
-  useEffect(() => {
-    if (postsStatus === 'idle') {
-      dispatch(fetchPosts());
-    }
-  }, [postsStatus, dispatch]);
 
   const orderPosts = posts
     .slice()
@@ -28,7 +14,8 @@ const PostsList = () => {
 
   return (
     <section>
-      <h2>Posts</h2>
+      <h3>All Posts</h3>
+      <p>There are {posts.length} posts</p>
       <br />
       {postsStatus === 'loading' && <p>Loading...</p>}
       {postsStatus === 'succeeded' && (
