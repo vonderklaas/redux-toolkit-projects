@@ -12,9 +12,9 @@ const EditPostForm = () => {
   const post = useSelector((state) => selectPostById(state, Number(postId)));
   const users = useSelector(selectAllUsers);
 
-  const [title, setTitle] = useState(post?.title);
-  const [content, setContent] = useState(post?.body);
-  const [userId, setUserId] = useState(post?.userId);
+  const [title, setTitle] = useState(post.title);
+  const [content, setContent] = useState(post.body);
+  const [userId, setUserId] = useState(post.userId);
   const [requestStatus, setRequestStatus] = useState('idle');
 
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ const EditPostForm = () => {
   if (!post) {
     return (
       <section>
-        <h2>Post not found!</h2>
+        <h3>Post not found!</h3>
       </section>
     );
   }
@@ -47,7 +47,9 @@ const EditPostForm = () => {
             reactions: post.reactions,
           })
         ).unwrap();
-        cleanPostLocalStates();
+        setTitle('');
+        setContent('');
+        setUserId('');
         navigate(`/post/${postId}`);
       } catch (err) {
         console.error('Failed to save the post', err);
@@ -61,7 +63,9 @@ const EditPostForm = () => {
     try {
       setRequestStatus('pending');
       dispatch(deletePost({ id: post.id })).unwrap();
-      cleanPostLocalStates();
+      setTitle('');
+      setContent('');
+      setUserId('');
       navigate('/');
     } catch (err) {
       console.error('Failed to delete the post', err);
@@ -70,15 +74,9 @@ const EditPostForm = () => {
     }
   };
 
-  const cleanPostLocalStates = () => {
-    setTitle('');
-    setContent('');
-    setUserId('');
-  };
-
   return (
     <section>
-      <h2>Edit Post</h2>
+      <h3>Edit Post</h3>
       <form>
         <label htmlFor='postTitle'>Post Title:</label>
         <input

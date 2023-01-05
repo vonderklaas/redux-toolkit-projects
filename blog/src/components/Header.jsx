@@ -14,6 +14,9 @@ const Header = () => {
           <li>
             <Link to='post'>Add Post</Link>
           </li>
+          <li>
+            <Link to='user'>Authors</Link>
+          </li>
         </ul>
       </nav>
     </header>

@@ -25,7 +25,6 @@ const AddPostForm = () => {
     if (canSave) {
       try {
         setAddRequestStatus('pending');
-        // .unwrap() is added by redux-thunk, returning another promise (allow us to use trycatch)
         dispatch(addNewPost({ title, body: content, userId })).unwrap();
         setTitle('');
         setContent('');
@@ -51,7 +50,6 @@ const AddPostForm = () => {
           value={title}
           onChange={onTitleChanged}
         />
-
         <label htmlFor='postAuthor'>Author:</label>
         <select id='postAuthor' value={userId} onChange={onAuthorChanged}>
           <option value=''></option>
@@ -63,7 +61,6 @@ const AddPostForm = () => {
             );
           })}
         </select>
-
         <label htmlFor='postContent'>Content:</label>
         <textarea
           id='postContent'
@@ -71,7 +68,6 @@ const AddPostForm = () => {
           value={content}
           onChange={onContentChanged}
         />
-
         <button disabled={!canSave} onClick={onSavePostClicked} type='button'>
           Save Post
         </button>

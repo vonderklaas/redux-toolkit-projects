@@ -10,13 +10,12 @@ import ReactionButtons from './ReactionButtons';
 
 const SinglePostPage = () => {
   const { postId } = useParams();
-
   const post = useSelector((state) => selectPostById(state, Number(postId)));
 
   if (!post) {
     return (
       <section>
-        <h2>Post not found!</h2>
+        <h3>Post not found!</h3>
       </section>
     );
   }

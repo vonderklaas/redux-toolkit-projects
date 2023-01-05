@@ -28,7 +28,7 @@ const PostsList = () => {
 
   return (
     <section>
-      <h2>Posts</h2>
+      <h3>Posts</h3>
       <br />
       {postsStatus === 'loading' && <p>Loading...</p>}
       {postsStatus === 'succeeded' && (
