@@ -1,0 +1,7 @@
+# Install json-server globally
+
+  npm i json-server -g
+
+# Here is the command to run the server
+
+  json-server --watch data/db.json --port 3500
