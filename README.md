@@ -1,6 +1,6 @@
 # redux-toolkit-projects
 
-This is a hub of different Redux Toolkit projects I made and still working on. You can find projects with different concepts covered: from store, slices, actions to redux-thunk and RTK Query
+This is a hub of different Redux projects I made and still work on. You can find projects with different concepts covered: from store, slices, actions to redux-thunk and RTK Query
 
 
 ### Notes
